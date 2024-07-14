@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Information Form</title>
+    <style>
+        .form-container {
+            margin: 20px;
+        }
+        .result-container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .table-container {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container th, .table-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .table-container th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter College Details</h2>
+        <form id="collegeForm" onsubmit="generateParagraph(); return false;">
+            <label for="Collegename">College Name:</label>
+            <input type="text" id="Collegename" name="Collegename" required><br><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br><br>
+
+            <label for="established">Year Established:</label>
+            <input type="number" id="established" name="established" required><br><br>
+            
+            <label for="Typeofcollege">Type of College:</label>
+            <select id="Typeofcollege" name="Typeofcollege">
+                <option value="Government College">Government</option>
+                <option value="Private College">Private</option>
+                <option value="Public College">Public</option>
+            </select><br><br>
+
+            <label for="appaff">Institute Approved/Affilated:</label>
+        <select id="appaff" name="appaff">
+            <option value="Approved">Approved</option>
+            <option value="Affilated">Affilated</option>
+        </select><br><br>
+
+            <label for="appaffby">Approved/Affiliated by:</label>
+            <input type="text" id="appaffby" name="appaffby" required><br><br>
+
+            <label for="Stream">Stream:</label>
+        <select id="Stream" name="Stream">
+            <option value="Management">Management</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Medical">Medical</option>
+            <option value="Pharmacy">Pharmacy</option>
+            <option value="Law">Law</option>
+        </select><br><br>
+
+            <label for="Courseoffered">Courses Offered:</label>
+            <input type="text" id="Courseoffered" name="Courseoffered" required><br><br>
+
+            <label for="Popularcourse">Popular Course:</label>
+            <input type="text" id="Popularcourse" name="Popularcourse" required><br><br>
+
+            <label for="Entranceexam">Entrance Exam:</label>
+            <input type="text" id="Entranceexam" name="Entranceexam" required><br><br>
+
+            <label for="Highestpackage">Highest Package:</label>
+            <input type="text" id="Highestpackage" name="Highestpackage" required><br><br>
+
+            <label for="Averagepackage">Average Package:</label>
+            <input type="text" id="Averagepackage" name="Averagepackage" required><br><br>
+
+            <label for="Toprecruiter">Top Recruiter:</label>
+            <input type="text" id="Toprecruiter" name="Toprecruiter" required><br><br>
+
+            <button type="button" onclick="generateParagraph()">Submit</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Add Course</h2>
+        <form onsubmit="addCourse(); return false;">
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" required><br><br>
+            <label for="courseFee">Course Fee:</label>
+            <input type="number" id="courseFee" name="courseFee" step="0.01" required><br><br>
+            <button type="submit">Add Course</button>
+        </form>
+
+        <table id="courseTable" class="table-container">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course Fee</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    
+
+    <div class="result-container" id="generatedParagraph">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
